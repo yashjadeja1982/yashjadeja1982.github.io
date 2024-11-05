@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Button Links</title>
+    <style>
+        /* Importing Aptos font if available */
+        @font-face {
+            font-family: 'Aptos';
+            src: url('path/to/aptos-regular.woff2') format('woff2'),
+                 url('path/to/aptos-regular.woff') format('woff');
+            font-weight: normal;
+            font-style: normal;
+        }
+
+        /* Styling for the page */
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            min-height: 100vh;
+            margin: 0;
+            font-family: "Aptos", "Segoe UI", sans-serif;
+            text-align: center;
+        }
+
+        /* Logo styling */
+        .logo {
+            max-width: 200px;
+            margin-bottom: 20px;
+        }
+
+        /* Heading styling */
+        .heading {
+            font-size: 24px;
+            font-weight: bold;
+            color: #d1136a; /* Updated color for Bhavnagar Circle */
+            margin-bottom: 20px;
+        }
+
+        /* Container for buttons */
+        .container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            max-width: 600px;
+        }
+
+        /* Column headers styling */
+        .column-header {
+            font-size: 18px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+        .column-header-purple {
+            color: #6a0dad; /* Purple color for Forms header */
+        }
+        .column-header-green {
+            color: #28a745; /* Green color for Responses header */
+        }
+
+        /* Styling for purple buttons */
+        .button-purple {
+            padding: 15px;
+            font-size: 16px;
+            background-color: #6a0dad;
+            color: white;
+            border: none;
+            cursor: pointer;
+            text-align: center;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+        .button-purple:hover {
+            background-color: #4b0082;
+        }
+
+        /* Styling for green buttons */
+        .button-green {
+            padding: 15px;
+            font-size: 16px;
+            background-color: #28a745;
+            color: white;
+            border: none;
+            cursor: pointer;
+            text-align: center;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+        .button-green:hover {
+            background-color: #218838;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- PGVCL Logo -->
+    <img src="https://discom.geourja.com/images/pg.png" alt="PGVCL Logo" class="logo">
+
+    <!-- Centered Heading -->
+    <div class="heading">Bhavnagar Circle</div>
+
+    <!-- Column Headers -->
+    <div class="container">
+        <div class="column-header column-header-purple">Forms</div>
+        <div class="column-header column-header-green">Responses</div>
+
+        <!-- Buttons with specific colors and links -->
+        <button class="button-purple" onclick="window.open('https://forms.gle/LtwdCurKmvB4qytF7', '_blank')">Safety Gadgets</button>
+        <button class="button-green" onclick="window.open('https://docs.google.com/spreadsheets/d/e/2PACX-1vSZK21D-d_R-SoMRwH8hwoRgFj7BHHee-_5fOcsbdJtbybF-pCxjQLIwDGmPWBDVUXnAHa_JAFNEJZX/pubhtml', '_blank')">SG Data</button>
+
+        <button class="button-purple" onclick="window.open('https://forms.gle/vJd6uX2eGBbHDKfj8', '_blank')">Mobile updation</button>
+        <button class="button-green" onclick="window.open('https://docs.google.com/spreadsheets/d/e/2PACX-1vQzthm1h-Mm3ibkKxsshANfMRvvVUtoBWvOyCSGGm_doH0ABjknH6yc35hkb-BFgIUKvKGjaDMonn3W/pubhtml', '_blank')">Mobile Data</button>
+
+        <button class="button-purple" onclick="window.open('https://forms.gle/XUG5KLXjL8e3N9V86', '_blank')">CMD Punching</button>
+        <button class="button-green" onclick="window.open('https://docs.google.com/spreadsheets/d/e/2PACX-1vR0nd4ozaGapsFcRWUcDpZK7aR6J9hRbE8j4XFLJkjOIgS4kELKFSCSLxPVZZ0BHDFJAzrmZOy8Sea4/pubhtml', '_blank')">CMD Data</button>
+
+        <button class="button-purple" onclick="window.open('https://forms.gle/efoEzAdQrkscA53H6', '_blank')">TC Replacement</button>
+        <button class="button-green" onclick="window.open('https://docs.google.com/spreadsheets/d/e/2PACX-1vT4iYPjjolclgejHLKAAtyDZEwi5rScmsTyBggTp5oeeETdC-_ND_Au-kPcv6XSmMFF0He55XMxK77r/pubhtml', '_blank')">TC Repl. Data</button>
+
+        <button class="button-purple" onclick="window.open('https://forms.gle/paxbh4crV9S3FJMz6', '_blank')">TC Amp Load</button>
+        <button class="button-green" onclick="window.open('https://docs.google.com/spreadsheets/d/e/2PACX-1vSY8RNKcI_sgGPr_8PhNE2AzX1AA8-okyezdTuDY6WwdzHpBCFoUakQwA1zMgGWIO0otu3IDbPxuaQE/pubhtml', '_blank')">Amp Load Data</button>
+
+        <button class="button-purple" onclick="window.open('https://forms.gle/qp1kwwUqfSLojVpH8', '_blank')">F Replacement</button>
+        <button class="button-green" onclick="window.open('https://docs.google.com/spreadsheets/d/e/2PACX-1vSpabA-DeYA-zK_VzBAR2sp2tj6-Eu0-jvjZljMX0EfLvztfYkqqBmOLOueYldzCw5mw2zF8P8qZR1J/pubhtml', '_blank')">F Repl. Data</button>
+
+        <button class="button-purple" onclick="window.open('https://example5.com', '_blank')">Open Link 5</button>
+        <button class="button-green" onclick="window.open('https://example6.com', '_blank')">Open Link 6</button>
+    </div>
+
+</body>
+</html>
