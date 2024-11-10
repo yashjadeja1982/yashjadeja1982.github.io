@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BVNC Gforms</title>
+    <title>Button Links</title>
     <style>
         /* Importing Aptos font if available */
         @font-face {
@@ -36,7 +36,7 @@
         .heading {
             font-size: 24px;
             font-weight: bold;
-            color: #d1136a; /* Updated color for Bhavnagar Circle */
+            color: #d1136a;
             margin-bottom: 20px;
         }
 
@@ -55,42 +55,53 @@
             margin-bottom: 10px;
         }
         .column-header-purple {
-            color: #6a0dad; /* Purple color for Forms header */
+            color: #6a0dad;
         }
         .column-header-green {
-            color: #28a745; /* Green color for Responses header */
+            color: #28a745;
         }
 
-        /* Styling for purple buttons */
-        .button-purple {
+        /* Button styling */
+        .button-purple, .button-green {
             padding: 15px;
             font-size: 16px;
-            background-color: #6a0dad;
             color: white;
             border: none;
             cursor: pointer;
             text-align: center;
             border-radius: 5px;
             transition: background-color 0.3s;
+        }
+        .button-purple {
+            background-color: #6a0dad;
         }
         .button-purple:hover {
             background-color: #4b0082;
         }
-
-        /* Styling for green buttons */
         .button-green {
-            padding: 15px;
-            font-size: 16px;
             background-color: #28a745;
+        }
+        .button-green:hover {
+            background-color: #218838;
+        }
+
+        /* Download button styling */
+        .download-button {
+            margin-top: 20px;
+            padding: 15px;
+            font-size: 18px;
+            background-color: #007bff;
             color: white;
             border: none;
             cursor: pointer;
             text-align: center;
             border-radius: 5px;
             transition: background-color 0.3s;
+            text-decoration: none;
+            display: inline-block;
         }
-        .button-green:hover {
-            background-color: #218838;
+        .download-button:hover {
+            background-color: #0056b3;
         }
     </style>
 </head>
@@ -129,6 +140,10 @@
         <button class="button-purple" onclick="window.open('https://example5.com', '_blank')">Open Link 5</button>
         <button class="button-green" onclick="window.open('https://example6.com', '_blank')">Open Link 6</button>
     </div>
+
+
+    <!-- APK Download Link -->
+    <a href="https://drive.google.com/file/d/1gK_iiIRhc4rTszvfWvpN_sr_51wDSzHR/view?usp=sharing" target="_blank" class="download-button">Download Android App</a>
 
 </body>
 </html>
