@@ -1,149 +1,248 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BVNC Gforms</title>
-    <style>
-        /* Importing Aptos font if available */
-        @font-face {
-            font-family: 'Aptos';
-            src: url('path/to/aptos-regular.woff2') format('woff2'),
-                 url('path/to/aptos-regular.woff') format('woff');
-            font-weight: normal;
-            font-style: normal;
-        }
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>BVNC Gforms</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      min-height: 100vh;
+      margin: 0;
+      padding: 40px 0;
+      font-family: 'Poppins', sans-serif;
+      text-align: center;
+      background-color: #f9f9f9;
+    }
 
-        /* Styling for the page */
-        body {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            flex-direction: column;
-            min-height: 100vh;
-            margin: 0;
-            font-family: "Aptos", "Segoe UI", sans-serif;
-            text-align: center;
-        }
+    .logo {
+      max-width: 150px;
+      margin-bottom: 20px;
+    }
 
-        /* Logo styling */
-        .logo {
-            max-width: 200px;
-            margin-bottom: 20px;
-        }
+    .heading {
+      font-size: 28px;
+      font-weight: bold;
+      color: #d1136a;
+      margin-bottom: 10px;
+    }
 
-        /* Heading styling */
-        .heading {
-            font-size: 24px;
-            font-weight: bold;
-            color: #d1136a;
-            margin-bottom: 20px;
-        }
+    .reports-button {
+      background: linear-gradient(135deg, #f7971e, #ffd200);
+      color: white;
+      font-size: 18px;
+      font-weight: bold;
+      border: none;
+      border-radius: 30px;
+      padding: 14px 50px;
+      cursor: pointer;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+      margin: 20px 0;
+      transition: transform 0.2s ease;
+      width: auto; display: inline-block;
+      max-width: 420px;
+    }
 
-        /* Container for buttons */
-        .container {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 20px;
-            max-width: 600px;
-        }
+    .reports-button:hover {
+      transform: scale(1.05);
+    }
 
-        /* Column headers styling */
-        .column-header {
-            font-size: 18px;
-            font-weight: bold;
-            margin-bottom: 10px;
-        }
-        .column-header-purple {
-            color: #6a0dad;
-        }
-        .column-header-green {
-            color: #28a745;
-        }
+    .container {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+      max-width: 600px;
+    }
 
-        /* Button styling */
-        .button-purple, .button-green {
-            padding: 15px;
-            font-size: 16px;
-            color: white;
-            border: none;
-            cursor: pointer;
-            text-align: center;
-            border-radius: 5px;
-            transition: background-color 0.3s;
-        }
-        .button-purple {
-            background-color: #6a0dad;
-        }
-        .button-purple:hover {
-            background-color: #4b0082;
-        }
-        .button-green {
-            background-color: #28a745;
-        }
-        .button-green:hover {
-            background-color: #218838;
-        }
+    .column-header {
+      font-size: 20px;
+      font-weight: bold;
+      margin-bottom: 10px;
+    }
 
-        /* Download button styling */
-        .download-button {
-            margin-top: 20px;
-            padding: 15px;
-            font-size: 18px;
-            background-color: #007bff;
-            color: white;
-            border: none;
-            cursor: pointer;
-            text-align: center;
-            border-radius: 5px;
-            transition: background-color 0.3s;
-            text-decoration: none;
-            display: inline-block;
-        }
-        .download-button:hover {
-            background-color: #0056b3;
-        }
-    </style>
+    .column-header-purple { color: #6a0dad; }
+    .column-header-green { color: #28a745; }
+    .column-header-orange {
+      color: #ff7f0e;
+      margin-top: 30px;
+      margin-bottom: 10px;
+      text-align: center;
+    }
+    .column-header-blue {
+      color: #007bff;
+      margin-top: 30px;
+      margin-bottom: 10px;
+      text-align: center;
+    }
+
+    .button-purple, .button-green, .button-orange, .button-blue {
+      padding: 15px;
+      font-size: 18px;
+      color: white;
+      border: none;
+      cursor: pointer;
+      text-align: center;
+      border-radius: 5px;
+      transition: background-color 0.3s;
+    }
+
+    .button-purple { background-color: #6a0dad; }
+    .button-purple:hover { background-color: #4b0082; }
+    .button-green { background-color: #28a745; }
+    .button-green:hover { background-color: #218838; }
+    .button-orange { background-color: #ff7f0e; }
+    .button-orange:hover { background-color: #cc6600; }
+    .button-blue { background-color: #007bff; }
+    .button-blue:hover { background-color: #0056b3; }
+
+    .download-button {
+      margin-top: 40px;
+      padding: 15px;
+      font-size: 20px;
+      background-color: #8B0000;
+      color: white;
+      border: none;
+      cursor: pointer;
+      text-align: center;
+      border-radius: 5px;
+      transition: background-color 0.3s;
+      text-decoration: none;
+      display: inline-block;
+    }
+    .download-button:hover { background-color: #5A0000; }
+
+    .footer-text {
+      margin-top: 30px;
+      font-size: 18px;
+    }
+
+    .footer-link {
+      color: #007bff;
+      text-decoration: none;
+    }
+    .footer-link:hover {
+      text-decoration: underline;
+    }
+
+    .tasks-container {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+      max-width: 600px;
+    }
+
+    @media (max-width: 600px) {
+  .container, .tasks-container {
+    grid-template-columns: 1fr 1fr;
+  }
+  .button-purple, .button-green, .button-orange, .button-blue {
+    width: 100%;
+  }
+}
+  .button-purple, .button-green, .button-orange, .button-blue {
+    width: 100%;
+  }
+}
+      .button-purple, .button-green, .button-orange, .button-blue {
+        width: 100%;
+      }
+    }
+  </style>
 </head>
 <body>
 
-    <!-- PGVCL Logo -->
-    <img src="https://discom.geourja.com/images/pg.png" alt="PGVCL Logo" class="logo">
+  <img src="https://discom.geourja.com/images/pg.png" alt="PGVCL Logo" class="logo">
+  <div class="heading">Bhavnagar Circle</div>
 
-    <!-- Centered Heading -->
-    <div class="heading">Bhavnagar Circle</div>
+  <button class="reports-button" onclick="window.open('https://sites.google.com/view/pgvclbvnc/reports', '_blank')">
+  ?? Reports
+</button>
+<!-- Continue with your existing layout -->
+  <div class="container">
+    <div class="column-header column-header-purple">Forms</div>
+    <div class="column-header column-header-green">Responses</div>
 
-    <!-- Column Headers -->
-    <div class="container">
-        <div class="column-header column-header-purple">Forms</div>
-        <div class="column-header column-header-green">Responses</div>
+        <button class="button-purple" onclick="window.open('https://forms.gle/7LmnU2Pwzs67qVi6A', '_blank')">Morning Talk</button>
+        <button class="button-green" onclick="window.open('https://docs.google.com/spreadsheets/d/1HS7MreQb4NWPPwr1jurDhB61bHyR3eO20FrJ2IKOmxE/edit?usp=sharing', '_blank')">Work Planning</button>
 
-        <!-- Buttons with specific colors and links -->
-        <button class="button-purple" onclick="window.open('https://forms.gle/LtwdCurKmvB4qytF7', '_blank')">Safety Gadgets</button>
-        <button class="button-green" onclick="window.open('https://docs.google.com/spreadsheets/d/e/2PACX-1vSZK21D-d_R-SoMRwH8hwoRgFj7BHHee-_5fOcsbdJtbybF-pCxjQLIwDGmPWBDVUXnAHa_JAFNEJZX/pubhtml', '_blank')">SG Data</button>
+        <button class="button-purple" onclick="window.open('https://forms.gle/gaLUo7FuHkBfNuCV8', '_blank')">Smart MI</button>
+        <button class="button-green" onclick="window.open('https://docs.google.com/spreadsheets/d/12UAZzs0Le4Si0yBx--68v55pFOjfo3ew0TZqHVI8FYY/edit?usp=sharing', '_blank')">Smart MI Report</button>
 
-        <button class="button-purple" onclick="window.open('https://forms.gle/vJd6uX2eGBbHDKfj8', '_blank')">Mobile updation</button>
-        <button class="button-green" onclick="window.open('https://docs.google.com/spreadsheets/d/e/2PACX-1vQzthm1h-Mm3ibkKxsshANfMRvvVUtoBWvOyCSGGm_doH0ABjknH6yc35hkb-BFgIUKvKGjaDMonn3W/pubhtml', '_blank')">Mobile Data</button>
+        <button class="button-purple" onclick="window.open('https://sites.google.com/view/pgvclbvnc/fcc/fcc-gforms', '_blank')">FC Complains</button>
+        <button class="button-green" onclick="window.open('https://docs.google.com/spreadsheets/d/1PxEnlYnvkzqD2Z7a4hmyQTsncX2WrAlH5qD7FInOu9g/edit?usp=sharing', '_blank')">FCC Report</button>
 
-        <button class="button-purple" onclick="window.open('https://forms.gle/XUG5KLXjL8e3N9V86', '_blank')">CMD Punching</button>
-        <button class="button-green" onclick="window.open('https://docs.google.com/spreadsheets/d/e/2PACX-1vR0nd4ozaGapsFcRWUcDpZK7aR6J9hRbE8j4XFLJkjOIgS4kELKFSCSLxPVZZ0BHDFJAzrmZOy8Sea4/pubhtml', '_blank')">CMD Data</button>
+        <button class="button-purple" onclick="window.open('https://forms.gle/Na1s3NwcAwUAT1T86', '_blank')">PM Testing</button>
+        <button class="button-green" onclick="window.open('https://docs.google.com/spreadsheets/d/1h16wysAg1GeDc-1WqOFbZ-4TKoGlH5dPSCjceyhHhzE/edit?usp=sharing', '_blank')">Panel Meters</button>
 
-        <button class="button-purple" onclick="window.open('https://forms.gle/efoEzAdQrkscA53H6', '_blank')">TC Replacement</button>
-        <button class="button-green" onclick="window.open('https://docs.google.com/spreadsheets/d/e/2PACX-1vT4iYPjjolclgejHLKAAtyDZEwi5rScmsTyBggTp5oeeETdC-_ND_Au-kPcv6XSmMFF0He55XMxK77r/pubhtml', '_blank')">TC Repl. Data</button>
+        <button class="button-purple" onclick="window.open('https://sites.google.com/view/pgvclbvnc/eoc', '_blank')">EOC Entry</button>
+        <button class="button-green" onclick="window.open('https://docs.google.com/spreadsheets/d/1mJZktdRnpbrvCDgaxxrpAjM6h8KGLHvc6cDXtwQAneU/edit?usp=sharing', '_blank')">EOC Report</button>
 
-        <button class="button-purple" onclick="window.open('https://forms.gle/paxbh4crV9S3FJMz6', '_blank')">TC Amp Load</button>
-        <button class="button-green" onclick="window.open('https://docs.google.com/spreadsheets/d/e/2PACX-1vSY8RNKcI_sgGPr_8PhNE2AzX1AA8-okyezdTuDY6WwdzHpBCFoUakQwA1zMgGWIO0otu3IDbPxuaQE/pubhtml', '_blank')">Amp Load Data</button>
+        <button class="button-purple" onclick="window.open('https://forms.gle/Dk4hbtSv2NvDFHt37', '_blank')">Beautification</button>
+        <button class="button-green" onclick="window.open('https://docs.google.com/spreadsheets/d/1aGUk-Lf1GLBnosrdtZEl38uKnrB2b6hZkbo3FJUQItc/edit?usp=sharing', '_blank')">NB Report</button>
 
-        <button class="button-purple" onclick="window.open('https://forms.gle/qp1kwwUqfSLojVpH8', '_blank')">F Replacement</button>
-        <button class="button-green" onclick="window.open('https://docs.google.com/spreadsheets/d/e/2PACX-1vSpabA-DeYA-zK_VzBAR2sp2tj6-Eu0-jvjZljMX0EfLvztfYkqqBmOLOueYldzCw5mw2zF8P8qZR1J/pubhtml', '_blank')">F Repl. Data</button>
+        <button class="button-purple" onclick="window.open('https://forms.gle/E5jf2TYq8dHXsGAX8', '_blank')">TOU Charges</button>
+        <button class="button-green" onclick="window.open('https://docs.google.com/spreadsheets/d/1eEHy_jIAy46afDbpHseMfnn9vZGqlaHYGfQg1I58xG4/edit?usp=sharing', '_blank')">TOU Summary</button>
 
-        <button class="button-purple" onclick="window.open('https://example5.com', '_blank')">Open Link 5</button>
-        <button class="button-green" onclick="window.open('https://example6.com', '_blank')">Open Link 6</button>
+        <button class="button-purple" onclick="window.open('https://forms.gle/apzRtTfPx5HT3LXS7', '_blank')">Solar Check</button>
+        <button class="button-green" onclick="window.open('https://docs.google.com/spreadsheets/d/1fuVX1-iJbqZO_yLq5MAFiQAEZmSL-MLrlVSgvs4R_d4/edit?usp=sharing', '_blank')">Solar Data</button>
+
+        <button class="button-purple" onclick="window.open('https://forms.gle/t99GUATG47qG4xuF7', '_blank')">Mobile updation</button>
+        <button class="button-green" onclick="window.open('https://docs.google.com/spreadsheets/d/1WvIiXKsRpr8i_HzlOSwCuOYxsdS0DqJ6ELDyS-OgM9k/edit?usp=sharing', '_blank')">Mobile Data</button>
+
+        <button class="button-purple" onclick="window.open('https://forms.gle/RtWYZugPTfpDcjRr7', '_blank')">F Replacement</button>
+        <button class="button-green" onclick="window.open('https://docs.google.com/spreadsheets/d/1T04iTLfFN9uJY2wInvCWL7y5SLp65IxQgaMo_OTSC0w/edit?usp=sharing', '_blank')">F Repl. Data</button>
+
+        <button class="button-purple" onclick="window.open('https://forms.gle/yBUwDK3seYDmJ43c9', '_blank')">TC Replacement</button>
+        <button class="button-green" onclick="window.open('https://docs.google.com/spreadsheets/d/18UkA2yoabls7_FkMkoHnxql4JsxhOXMqN8bYIsQi81I/edit?usp=sharing', '_blank')">TC Repl. Data</button>
+
+        <button class="button-purple" onclick="window.open('https://forms.gle/otbCDkWSJMfgLBD97', '_blank')">TC Amp Load</button>
+        <button class="button-green" onclick="window.open('https://docs.google.com/spreadsheets/d/1OPdCx6XWp5oyREjpaI2tklNnYVV_JZFMnbwPeMSE1Jk/edit?usp=sharing', '_blank')">Amp Load Data</button>
+
+        <button class="button-purple" onclick="window.open('https://forms.gle/fMmsjBo4R4H8Gwgs6', '_blank')">MR Observations</button>
+        <button class="button-green" onclick="window.open('https://docs.google.com/spreadsheets/d/1_uaZB6Z0p2BNN2rAUPZhELjWNgjLgrkT-wtXVvnZRkk/edit?usp=sharing', '_blank')">MR Obs. Data</button>
+
+        <button class="button-purple" onclick="window.open('https://forms.gle/6mLtVmdtaR5XPuyZ8', '_blank')">Disconnections</button>
+        <button class="button-green" onclick="window.open('https://docs.google.com/spreadsheets/d/1OBx9NCEn1eIBKe1lXXYHPH1AGY8ndRrw882sijXorNk/edit?usp=sharing', '_blank')">Dis. Report</button>
+
+        <button class="button-purple" onclick="window.open('https://forms.gle/x9QgBBonVU2aR9kY9', '_blank')">Safety Gadgets</button>
+        <button class="button-green" onclick="window.open('https://docs.google.com/spreadsheets/d/1pqV_r0hw-c3yFQJ4w3RL8fiI_b8FP3fILAZhaA1fWpw/edit?usp=sharing', '_blank')">SG Data</button>
+
+        <button class="button-purple" onclick="window.open('https://forms.gle/87PXXNq1XdJosNEu6', '_blank')">CMD Punching</button>
+        <button class="button-green" onclick="window.open('https://docs.google.com/spreadsheets/d/1X1tEd6Od8iRIAa0BmjTfG0UCMxiQpgOSb7JUf_TbKxU/edit?usp=sharing', '_blank')">CMD Data</button>
+
+        <button class="button-purple" onclick="window.open('https://forms.gle/Y61VyxEee62DpzTv5', '_blank')">FLZ Verification</button>
+        <button class="button-green" onclick="window.open('https://docs.google.com/spreadsheets/d/1QpllaG6BPsqgpbtDP_OTRbUjkB4akYxH2BI1-iWl_gw/edit?usp=sharing', '_blank')">FLZ Data</button>
+
+        <button class="button-purple" onclick="window.open('https://forms.gle/U32BFP7fMfZ3CNpJA', '_blank')">LV 4.95</button>
+        <button class="button-green" onclick="window.open('https://docs.google.com/spreadsheets/d/e/2PACX-1vT2ILWL4yvUbLmVe2_h8VzAg6AKNH3Q_vhUiGZ4Spxrmcs0fQjg0wa8PTBB88GugkJGDVaErEypOond/pubhtml', '_blank')">LV4.95 Data</button>
+
+        <button class="button-purple" onclick="window.open('https://forms.gle/RUvcNdQQqMudy4D49', '_blank')">Vehicle Indent</button>
+        <button class="button-green" onclick="window.open('https://docs.google.com/spreadsheets/d/1CGAqvWJhw1VRhm02lXLyCbmbj7iJCBEV5n4RMZAbeRI/edit?usp=sharing', '_blank')">Allotment</button>
+  </div>
+
+    <div class="column-header column-header-orange">Tasks</div>
+    <div class="tasks-container">
+        <button class="button-orange" onclick="window.open('https://docs.google.com/spreadsheets/d/1JX_jgXXaWNhPoedL3lXJsUxUMKDxerC0ru6DZA3oMIc/edit?gid=0#gid=0&fvid=952967006', '_blank')">Tasks - Division</button>
+        <button class="button-orange" onclick="window.open('https://docs.google.com/spreadsheets/d/1JX_jgXXaWNhPoedL3lXJsUxUMKDxerC0ru6DZA3oMIc/edit?gid=0#gid=0&fvid=2110090991', '_blank')">Tasks - Dept.</button>
     </div>
 
+    <div class="column-header column-header-blue">Information</div>
+    <div class="tasks-container">
+        <button class="button-blue" onclick="window.open('https://forms.gle/4nBvHL1AkboctgqdA', '_blank')">Theft Information</button>
+        <button class="button-blue" onclick="window.open('https://forms.gle/JtP6rhwst9MrK2A3A', '_blank')">New Ideas</button>
+    </div>
 
-    <!-- APK Download Link -->
     <a href="https://drive.google.com/file/d/1-15vhan-hMUYhmCp12U0GS3UMPk_EAbX/view?usp=sharing" target="_blank" class="download-button">Download Android App</a>
+
+    <div class="footer-text">
+        Also available on (LAN PC)<br>
+        <a href="https://sites.google.com/view/pgvclbvnc" class="footer-link">https://sites.google.com/view/pgvclbvnc</a><br>
+        <a href="ftp://10.3.0.31/Bhavnagar/SE/BVNC Gforms.html" class="footer-link">ftp://10.3.0.31/Bhavnagar/SE/BVNC Gforms.html</a>
+    </div>
 
 </body>
 </html>
